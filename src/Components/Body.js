@@ -8,12 +8,12 @@ const Body=()=>{
     const [lofres,setlofres]=useState([]);
     const [searchText,setsearchText]=useState("");
     const r= useResMenu();
+    const onlineStatus=useronlineStatus();
 
     useEffect(()=>{
         setlofres(r);
     },[r]);
 
-    const onlineStatus=useronlineStatus();
 
     if(onlineStatus==false){
         return (
