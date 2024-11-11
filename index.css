@@ -4,6 +4,19 @@
     border:1px solid black;
 }
 
+.user-card{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    border: 1px solid black;
+}
+
+.user-card img{
+    height: 300px;
+    width: 250px;
+}
 .logo{
     width: 200px;
 }
