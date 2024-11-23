@@ -1,4 +1,4 @@
-import React from "react"; // importing REACT from node_modules
+import React, {lazy,Suspense} from "react"; // importing REACT from node_modules
 import ReactDOM  from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -9,10 +9,16 @@ import Cart from "./Components/Cart";
 import Error from "./Components/Error";
 import { Outlet } from "react-router-dom";
 import RestaurentDetails from "./Components/RestaurentDetails";
+//import Grocery from "./Components/Grocery";
 
+
+// chunking, code splitting, Dynamic Bundling, lazy loading, on demand loading
+
+
+const Grocery=lazy(()=>import("./Components/Grocery"));
 const AppLayout=()=>{
     return (
-        <div className="app">
+        <div>
             <Header/>
             <Outlet/>
         </div>
@@ -35,6 +41,12 @@ const appRouter=createBrowserRouter([
             {
                 path:"/Contact",
                 element:<Contact/>,
+            },
+            {
+                path:"/Grocery",
+                element:<Suspense fallback={<h1>Loading.....</h1>}><Grocery/></Suspense>,
+                //There will be few milisecond time while fetching data of grocery so for that time gap to not cause problem we use suspense
+                //fallback is like a placeholder to show something during that time gap
             },
             {
                 path:"/cart",

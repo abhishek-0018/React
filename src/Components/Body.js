@@ -27,31 +27,31 @@ const Body=()=>{
 
 
     return(
-        <div className="body">
+        <div>
 
-            <div className="filter">
-                <div className="search">
+            <div className="flex">
+                <div className="m-4 p-4">
                     
-                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(e)=>{
                         setsearchText(e.target.value);
                     }}></input>
                     
-                    <button onClick={()=>{
+                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=>{
                          const filteredres=lofres.filter((res) => res.card.card.info.name.toLowerCase().includes(searchText.toLowerCase()));
                          setlofres(filteredres);
                     }}>Search</button>
 
                 </div>
-
-                <button className="filter-btn" onClick={()=>{
+                <div className="m-4 p-4">
+                <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=>{
                     const resObj1=lofres.filter(
                     (res)=>res.card.card.info.avgRating>4
                     );
                     setlofres(resObj1);
                 }}>Top Rated Restaurent</button>
-
+                </div>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {
                     lofres.map((res) => (
                       <RestaurentCard key={res.card.card.info.id} resData={res} />

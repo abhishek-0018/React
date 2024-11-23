@@ -25,8 +25,8 @@ class UserClass extends React.Component{
             return <div><h1>loading.......</h1></div>
         }
         return(
-            <div className="user-card">
-                <img src={avatar_url} alt="rrr"/>
+            <div className="p-10 flex flex-col justify-center items-center border border-solid border-black">
+                <img className="rounded-3xl" src={avatar_url} alt="rrr"/>
                 <h2>Name: {name}</h2>
                 <h3>Location: {location}</h3>
                 <h2>ID: {id}</h2>

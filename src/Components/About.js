@@ -8,9 +8,8 @@ class About extends Component{
     }
     render(){
         return (
-            <div>
-                <h1>About</h1>
-                <h2>This is food ordering website</h2>
+            <div className="m-4 py-4 flex flex-col justify-center ">
+                <div><h1 className="font-bold">Creater of this food ordering website:</h1></div>
                 <UserClass name={"Abhishek"} location={"Kanpur"}/>
                 {/* <User name={"Abhishek"} location={"Kanpur"}/> */}
             </div>
