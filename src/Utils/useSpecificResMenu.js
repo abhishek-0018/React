@@ -1,17 +1,17 @@
 import { useEffect,useState } from "react";
-import { MENU_API } from "./contants";
-const useResMenu=()=>{
+const useSpecificResMenu=(API)=>{
     const [resInfo,setresInfo]=useState([]);
     useEffect(()=>{
         fetchData();
     },[]);
 
     const fetchData=async()=>{
-        const data=await fetch(MENU_API);
+        const data=await fetch(API);
         const json =await data.json();
-        setresInfo(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        const specificCard = json.data.cards.slice(3);
+        setresInfo(specificCard);
     }
     return resInfo;
 }
 
-export default useResMenu;
+export default useSpecificResMenu;

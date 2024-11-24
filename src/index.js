@@ -9,6 +9,10 @@ import Cart from "./Components/Cart";
 import Error from "./Components/Error";
 import { Outlet } from "react-router-dom";
 import RestaurentDetails from "./Components/RestaurentDetails";
+import Pizza from "./Components/SpecificDish/Pizza";
+import Biryani from "./Components/SpecificDish/Biryani";
+import Chinese from "./Components/SpecificDish/Chinese";
+import Specificdish from "./Components/SpecificDish/Specificdish";
 //import Grocery from "./Components/Grocery";
 
 
@@ -32,7 +36,7 @@ const appRouter=createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:<Body/>,
+                element:[<Specificdish/>,<Body/>],
             },
             {
                 path:"/about",
@@ -55,6 +59,18 @@ const appRouter=createBrowserRouter([
             {
                 path:"/restaurents/:resId",
                 element:<RestaurentDetails/>,
+            },
+            {
+                path:"/Pizza",
+                element:<Pizza/>,
+            },
+            {
+                path:"/Biryani",
+                element:<Biryani/>,
+            },
+            {
+                path:"/Chinese",
+                element:<Chinese/>,
             },
         ],
         errorElement:<Error/>,
