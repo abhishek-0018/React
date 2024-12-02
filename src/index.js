@@ -12,6 +12,7 @@ import RestaurentDetails from "./Components/RestaurentDetails";
 import Pizza from "./Components/SpecificDish/Pizza";
 import Biryani from "./Components/SpecificDish/Biryani";
 import Chinese from "./Components/SpecificDish/Chinese";
+import Cake from "./Components/SpecificDish/Cake";
 import Specificdish from "./Components/SpecificDish/Specificdish";
 //import Grocery from "./Components/Grocery";
 
@@ -71,6 +72,10 @@ const appRouter=createBrowserRouter([
             {
                 path:"/Chinese",
                 element:<Chinese/>,
+            },
+            {
+                path:"/Cake",
+                element:<Cake/>,
             },
         ],
         errorElement:<Error/>,

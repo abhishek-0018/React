@@ -9,7 +9,6 @@ const Body=()=>{
     const [searchText,setsearchText]=useState("");
     const r= useResMenu();
     const onlineStatus=useronlineStatus();
-
     useEffect(()=>{
         setlofres(r);
     },[r]);
@@ -26,21 +25,21 @@ const Body=()=>{
     }
     return(
         <div>
-            <div className="flex">
-                <div className="m-4 p-4">
+            <div className="flex items-center justify-center">
+                <div className="mx-2 px-2">
 
-                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(e)=>{
+                    <input type="text" placeholder="Enter Restaurent name" className="border border-solid border-black" value={searchText} onChange={(e)=>{
                         setsearchText(e.target.value);
                     }}></input>
                     
-                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=>{
+                    <button className="px-4 py-2 bg-red-300 sm:bg-green-300 lg:bg-gray-300 m-4 rounded-lg" onClick={()=>{
                          const filteredres=lofres.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                          setlofres(filteredres);
                     }}>Search</button>
                 </div>
 
                 <div className="m-4 p-4">
-                <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=>{
+                <button className="px-4 py-2 bg-red-300 sm:bg-green-300 lg:bg-gray-300 m-4 rounded-lg" onClick={()=>{
                     const resObj1=lofres.filter(
                     (res)=>res.info.avgRating>4.4
                     );
@@ -49,10 +48,13 @@ const Body=()=>{
                 </div>
             </div>
 
-            <div className="flex flex-wrap">
+            <div>
+                <h1 className="text-4xl ml-[70px]">Top restaurant chains in Kanpur</h1>
+            </div>
+            <div className="flex flex-wrap ml-[100px]">
                 {
                     lofres.map((res) => (
-                      <RestaurentCard key={res.info.id} resData={res} />
+                        <RestaurentCard key={res.info.id} resData={res} />
                     ))
                 }
             </div>

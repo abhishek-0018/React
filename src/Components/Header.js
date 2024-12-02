@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header=()=>{
     const [btnNameReact,setbtnNameReact] =useState("Login");
     return(
-        <div className="flex justify-between shadow-lg bg-gray-100 sm:bg-green-100 lg:bg-red-300">
+        <div className="flex justify-between shadow-lg bg-red-100 sm:bg-green-100 lg:bg-gray-100">
             <div>
                 <img  className="w-56" src={LOGO_URL}/>
             </div>
@@ -15,7 +15,7 @@ const Header=()=>{
                     <li className="px-4"><Link to="/Contact">Contact Us</Link></li>
                     <li className="px-4"><Link to="/Grocery">Grocery</Link></li>
                     <li className="px-4"><Link to="/Cart">Cart</Link></li>
-                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=>{
+                    <button className="px-4 py-2 bg-red-300 sm:bg-green-300 lg:bg-gray-300 m-4 rounded-lg" onClick={()=>{
                         if(btnNameReact=="Login"){
                             setbtnNameReact("Logout");}
                             else{

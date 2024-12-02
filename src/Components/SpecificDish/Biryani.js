@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurentPizzaCard from "./SpecificRestaurentsCard";
+import SpecificRestaurentsCard from "./SpecificRestaurentsCard";
 import Shimmer from "../Shimmer";
 import useSpecificResMenu from "../../Utils/useSpecificResMenu";
 import { MENU_API_BIRYANI } from "../../Utils/contants";
@@ -17,21 +17,21 @@ const Biryani=()=>{
      return(
         <div>
 
-            <div className="flex">
+            <div className="flex justify-center">
                 <div className="m-4 p-4">
                     
-                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(e)=>{
+                    <input type="text" placeholder="Enter Restaurent name" className="border border-solid border-black" value={searchText} onChange={(e)=>{
                         setsearchText(e.target.value);
                     }}></input>
                     
-                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=>{
+                    <button className="px-4 py-2  bg-red-300 sm:bg-green-300 lg:bg-gray-300 m-4 rounded-lg" onClick={()=>{
                          const filteredres=lofresp.filter((res) => res.card.card.info.name.toLowerCase().includes(searchText.toLowerCase()));
                          setlofresp(filteredres);
                     }}>Search</button>
 
                 </div>
                 <div className="m-4 p-4">
-                <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=>{
+                <button className="px-4 py-2  bg-red-300 sm:bg-green-300 lg:bg-gray-300 m-4 rounded-lg" onClick={()=>{
                     const resObj1=lofresp.filter(
                     (res)=>res.card.card.info.avgRating>4
                     );
@@ -39,10 +39,10 @@ const Biryani=()=>{
                 }}>Top Rated Restaurent</button>
                 </div>
             </div>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap ml-[100px]">
                 {
                     lofresp.map((res) => (
-                      <RestaurentPizzaCard key={res.card.card.info.id} resData={res} />
+                        <SpecificRestaurentsCard key={res.card.card.info.id} resData={res} />
                     ))
                 }
             </div>

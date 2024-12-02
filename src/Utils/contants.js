@@ -10,3 +10,5 @@ export const MENU_API_BIRYANI="https://www.swiggy.com/dapi/restaurants/list/v5?l
 
 export const MENU_API_CHINESE="https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4533864&lng=80.2941488&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
 
+export const MENU_API_CAKE="https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4533864&lng=80.2941488&collection=83655&tags=layout_CCS_Cake&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
+

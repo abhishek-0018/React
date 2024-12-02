@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import SpecificRestaurentsCard from "./SpecificRestaurentsCard";
 import Shimmer from "../Shimmer";
 import useSpecificResMenu from "../../Utils/useSpecificResMenu";
-import { MENU_API_CHINESE } from "../../Utils/contants";
-const Chinese=()=>{
+import { MENU_API_CAKE } from "../../Utils/contants";
+const Cake=()=>{
     const [lofresp,setlofresp]=useState([]);
     const [searchText,setsearchText]=useState("");
-    const rp= useSpecificResMenu(MENU_API_CHINESE);
+    const rp = useSpecificResMenu(MENU_API_CAKE);
     useEffect(()=>{
         setlofresp(rp);
     },[rp]);
@@ -42,7 +42,7 @@ const Chinese=()=>{
             <div className="flex flex-wrap ml-[100px]">
                 {
                     lofresp.map((res) => (
-                      <SpecificRestaurentsCard key={res.card.card.info.id} resData={res} />
+                        <SpecificRestaurentsCard key={res.card.card.info.id} resData={res} />
                     ))
                 }
             </div>
@@ -50,4 +50,4 @@ const Chinese=()=>{
     );
 }
 
-export default Chinese;
+export default Cake;
